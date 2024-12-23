@@ -13,22 +13,12 @@ document.body.appendChild(renderer.domElement);
 const controls = new OrbitControls(camera, renderer.domElement)
 const loader = new FBXLoader();
 
-
-// const geometry = new THREE.BoxGeometry(2, 1, 1)
-// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );
-
-
 loader.load('model/wood/wood.fbx', (fbx) => {
     fbx.scale.set(13, 0.75, 2)
     fbx.rotation.set(-0.1, 1.95, 0.35)
     fbx.position.set(-2, 0, -20)
     scene.add(fbx)
 })
-
-// box1.rotation.x = -0.1
 
 loader.load('model/wood/wood.fbx', (fbx) => {
     fbx.scale.set(9, 0.75, 2)
@@ -44,16 +34,6 @@ loader.load('model/wood/wood.fbx', (fbx) => {
     scene.add(fbx)
 })
 
-// const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-// const helper = new THREE.HemisphereLightHelper( light, 5 );
-// scene.add( helper );
-
-// scene.add( light );
-
-// cube.rotation.x += 1.1;
-// cube.rotation.y += 1.0;
-// cube.material.color.add()
-
 const ambientlight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientlight);
 
@@ -62,8 +42,6 @@ light2.position.set(5, 15, -15 )
 scene.add(light2);
 
 camera.position.z = 5;
-// camera.position.y = -2;
-// camera.position.x = 0;
 camera.rotation.z = -0.1
 camera.rotation.x = -0.1
 
