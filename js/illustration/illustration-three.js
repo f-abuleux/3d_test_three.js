@@ -81,8 +81,8 @@ function Line(color, x1, y1, z1, x2, y2, z2, meter = 0) {
     createCube(x2, y2, z2)
 
     if (color == "0xffffff") {
-        const annotation = createLabel(`${meter}m`, new THREE.Vector3((x1 + x2) / 2, (y1 + y2) / 2, (z1 + z2) / 2));
-        scene.add(annotation);
+        const annotation = createLabel(`${meter}m`, new THREE.Vector3((x1 + x2) / 2, (y1 + y2) / 2, (z1 + z2) / 2))
+        scene.add(annotation)
     }
 
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
@@ -120,9 +120,9 @@ const light2 = new THREE.DirectionalLight(0xffffff, 1);
 light2.position.set(5, 15, -15)
 scene.add(light2);
 
-// const grid = new THREE.GridHelper(3, 3)
-// grid.position.y = -0.5
-// scene.add(grid)
+const grid = new THREE.GridHelper(3, 3)
+grid.position.y = -0.5
+scene.add(grid)
 
 camera.position.z = 5;
 
